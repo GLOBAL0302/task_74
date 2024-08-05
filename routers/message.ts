@@ -14,7 +14,7 @@ messageRouter.get("/", async(req, res) => {
         const result = JSON.parse(fileContent.toString())
         allMessages.push(result)
     }
-    res.send(allMessages);
+    res.send(allMessages.reverse().slice(0, 5));
 });
 
 messageRouter.post("/", async(req, res)=>{
